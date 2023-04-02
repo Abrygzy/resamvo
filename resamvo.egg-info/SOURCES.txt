@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+resamvo.egg-info/PKG-INFO
+resamvo.egg-info/SOURCES.txt
+resamvo.egg-info/dependency_links.txt
+resamvo.egg-info/requires.txt
+resamvo.egg-info/top_level.txt

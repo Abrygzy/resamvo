@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: resamvo
+Version: 0.1
+Summary: Resample data with Voronoi tessellation
+Author: Zeyu Gao
+Author-email: zygao@stu.pku.edu.cn
+License: MIT
+Requires-Python: >=3.6
+License-File: LICENSE

@@ -1,4 +1,8 @@
 from setuptools import setup, find_packages
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+    
 with open('requirements.txt') as infd:
     INSTALL_REQUIRES = [x.strip('\n') for x in infd.readlines()]
 setup(
