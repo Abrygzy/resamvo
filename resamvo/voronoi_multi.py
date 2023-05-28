@@ -25,7 +25,7 @@ def voronoi_cell_points_sigle(cell_vertices, target_points_original):
     # cell_vertices: 构成一个cell的所有顶点的坐标，array (n_vertices, n_dim)
     # target_points_original: 所有的目标点的坐标，array (n_points, n_dim)
     target_points = target_points_original.copy()
-    eps = np.finfo(np.float32).eps # 考虑到浮点数的误差，判断是不是在凸包内部的时候，用eps作为阈值
+    eps = np.finfo(np.float64).eps # 考虑到浮点数的误差，判断是不是在凸包内部的时候，用eps作为阈值
     # Initial Cut: remove target_points by the vertices of convex hull 
     low_boundaries = np.min(cell_vertices, axis=0)
     up_boundaries = np.max(cell_vertices, axis=0)
@@ -42,6 +42,7 @@ def voronoi_cell_points_sigle(cell_vertices, target_points_original):
         # Assuming x is shape (m, d), output is boolean shape (m,).
     contained_flag = np.all(np.asarray(target_points_initial_cut) @ A.T + b.T < eps, axis=1)
     return np.sum(contained_flag)
+    # return target_points_initial_cut[contained_flag]
 
 def voronoi_cell_points_multi(cell_vertices_list,target_points_original):
     target_points = target_points_original.copy()
